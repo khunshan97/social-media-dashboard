@@ -1,6 +1,7 @@
 # social-media-dashboard
 A single page application using react, dva and ant-design. 
-The API is based on `https://jsonplaceholder.typicode.com/`
+The API is based on `https://jsonplaceholder.typicode.com/`. 
+Demo: https://social-media-dashboad.herokuapp.com/
 
 ## Features
 - Users
