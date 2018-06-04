@@ -24,7 +24,7 @@ class Posts extends React.Component {
       type: 'posts/remove',
       payload: { id },
     });
-    
+
     this.setState({ list });
     message.success('Delete success!');
   }  
@@ -45,16 +45,19 @@ class Posts extends React.Component {
     message.success('Edit success!')
   }
 
-  createHandler = (values) => {
-    let { list } = this.state;
-    let obj = { id: list.length + 1, ...values };
-    list.push(obj);
-
+  createHandler = (id = -1, values) => {
+    let { list, users } = this.state;
+    let obj = { id, ...values };
+    let _users = users.filter(item => item.id === values.userId);
+    obj.userName = _users[0].name;
+    
     this.props.dispatch({
       type: 'posts/create',
       payload: values,
     });
 
+    // insert new item to the list
+    list.splice(0, 0 , obj);
     this.setState({ list });
     message.success('Create success!');
   }

@@ -55,7 +55,11 @@ export default {
           if (pathname.indexOf('/posts/') > -1) {
             let pathArr = pathname.split('/');
             let id = pathArr.slice(-1)[0];
-            dispatch({ type: 'getPost', payload: { id } });
+            if(id < 0) {
+              window.location.href = '#notfound';
+            } else {
+              dispatch({ type: 'getPost', payload: { id } });
+            }
         }
       });
     },
