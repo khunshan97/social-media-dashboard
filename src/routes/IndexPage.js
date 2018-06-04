@@ -17,9 +17,8 @@ class IndexPage extends React.PureComponent{
     
     return (
       <div className="normal">
-        <h1 className="title">Wohoo! </h1>
-        <Button size="large" onClick={this.buttonClickHandler}>Click me! </Button>
-        <h4>{this.state.text}</h4>
+        <h1 className="title">Welcome to Social Media Dashboard! </h1>
+        <h4 className="author">By Loc Cao</h4>
       </div>
     );
   }

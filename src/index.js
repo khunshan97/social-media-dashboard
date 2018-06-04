@@ -8,7 +8,11 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-// app.model(require('./models/example').default);
+app.model(require('./models/users').default);
+app.model(require('./models/posts').default);
+app.model(require('./models/albums').default);
+app.model(require('./models/postDetail').default);
+app.model(require('./models/photos').default);
 
 // 4. Router
 app.router(require('./router').default);
